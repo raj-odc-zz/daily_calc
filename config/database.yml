@@ -1,0 +1,22 @@
+defaults: &defaults
+   host: localhost
+   username: postgres
+   password: password
+   adapter: postgresql
+   encoding: unicode
+   pool: 5
+development:
+  <<: *defaults
+  database: vatti_kanakku_development
+development_sec:
+  <<: *defaults
+  database: vatti_kanakku_development_sec
+test:
+  <<: *defaults
+  database: vatti_kanakku1_test
+production:
+  <<: *defaults
+  database: vatti_kanakku1_production
+  username: postgres
+  password: <%= ENV['VATTI_KANAKKU_DATABASE_PASSWORD'] %>
+
